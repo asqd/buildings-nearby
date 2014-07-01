@@ -4,12 +4,20 @@
   <title>Buildingonmap</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <script src="http://api-maps.yandex.ru/1.1/index.xml?key=API-ключ" type="text/javascript"></script>
+  <script src="http://api-maps.yandex.ru/1.1/index.xml?key=AD_VslMBAAAAxMbzZgIAjlEvTOV1wUZFKdn8d0HNY9vtgsMAAAAAAAAAAAAsZ_1H-f3XTVCiw7LpZ7fwsz1kbw=="
+	type="text/javascript"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="YMapsID" style="width:600px;height:400px"></div>
 
 <%= yield %>
 
+<script type="text/javascript">
+        window.onload = function () {
+            var map = new YMaps.Map(document.getElementById("YMapsID"));
+            map.setCenter(new YMaps.GeoPoint(37.64, 55.76), 10);
+        }
+    </script>
 </body>
 </html>
