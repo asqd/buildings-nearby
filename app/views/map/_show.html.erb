@@ -1,0 +1,7 @@
+<% if @buildings.any? %>
+
+<h1>Listing Subjects</h1>
+<% @buildings.each do |building| %>
+	<li> <%= building.address %> </li>
+<% end %>
+<% end %>

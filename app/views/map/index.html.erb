@@ -1,2 +1,10 @@
-<h1>Map#index</h1>
-<p>Find me in app/views/map/index.html.erb</p>
+<% if @buildings.any? %>
+
+	<div id="buildings_list">
+	<h1>Listing Subjects</h1>
+	
+	<ul><% @buildings.each do |building| %>
+		<li> <%= building.address %> </li>
+	<% end %>
+	</div>
+<% end %>
