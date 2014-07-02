@@ -265,6 +265,7 @@ building_list = [
 ]
 
 building_list.each do | coord |
-	Building.new(coord).valid?.save
+	Building.create(latitude: coord[:latitude], longitude: coord[:longitude])
+	
 	sleep(1)
 end
