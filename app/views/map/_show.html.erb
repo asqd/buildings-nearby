@@ -1,9 +1,9 @@
 <% if @buildings.any? %>
 
-<table cellspacing="10">
+<table class="table" cellspacing="10">
 	<tr>
 <th>Address</th>
-<th>Distance to point</th>
+<th>Distance to point*</th>
 	</tr>
 	<% @buildings.each do |distance, building| %>
 	<tr>
@@ -13,5 +13,5 @@
 	</tr>
 	<% end %>
 </table>
-
+<p class="notice" >*buildings shown within 4 kilometers from the marker</p>
 <% end %>

@@ -10,7 +10,8 @@ function initialize() {
     var mapOptions = {
         zoom: 12, //масштаб
         center: coordinate, //позиционируем карту на заданые координаты
-        mapTypeId: google.maps.MapTypeId.ROADMAP //задаем тип карты
+        mapTypeId: google.maps.MapTypeId.ROADMAP, //задаем тип карты
+        language: "ru"
     };
 
     //инициализация карты

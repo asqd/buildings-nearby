@@ -3,17 +3,17 @@ class MapController < ApplicationController
 
   respond_to :html, :js
   def index
-    @buildings = Building.all
+    #@buildings = Building.all
   end
 
   def show
     point = Building.new(latitude: params[:latitude], longitude: params[:longitude])
     
     distanses = {}
-  	@buildings = point.nearbys(4, units: :km)
+  	@buildings = point.nearbys(4)
 
     @buildings.each do |building|
-		d = building.distance_to(point, :km)
+		d = building.distance_to(point)
 		distanses[d] = building   
 	end
     

@@ -7,21 +7,28 @@
    
   <%= csrf_meta_tags %>
   <script type="text/javascript"
-      src="http://maps.googleapis.com/maps/api/js?libraries=geometry&sensor=false">
+      src="http://maps.googleapis.com/maps/api/js?libraries=geometry&sensor=false&language=ru">
     </script>
 </head>
 <body>
+<div class="container">
 
 <%= form_tag(show_path, method: "post", id: 'buildings', remote: true) do %>
-<div id="maps"></div>
 
-<%= label_tag :latitude %>
-<%= text_field_tag :latitude, params[:latitude] %>
-<%= label_tag :longitude %>
-<%= text_field_tag :longitude, params[:longitude] %>
+	<div id="maps"></div>
+
+	
+	<div class="hidden span4" >
+		<%= label_tag :latitude %>
+		<%= text_field_tag :latitude, params[:latitude] %>
+		<%= label_tag :longitude %>
+		<%= text_field_tag :longitude, params[:longitude] %>
+	</div>
+
 
 <% end %>
-<%= yield %>
 
+	<%= yield %>
+</div>
 </body>
 </html>
