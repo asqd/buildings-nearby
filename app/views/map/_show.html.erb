@@ -1,7 +1,17 @@
 <% if @buildings.any? %>
 
-<h1>Listing Subjects</h1>
-<% @buildings.each do |building| %>
-	<li> <%= building.address %> </li>
-<% end %>
+<table cellspacing="10">
+	<tr>
+<th>Address</th>
+<th>Distance to point</th>
+	</tr>
+	<% @buildings.each do |distance, building| %>
+	<tr>
+		<td><%= building.address %></td> 
+		<!-- Перобразовываем расстояние если оно меньше 1 километра в метры -->
+		<td><%= format_distance(distance) %></td>
+	</tr>
+	<% end %>
+</table>
+
 <% end %>

@@ -13,7 +13,7 @@
 <body>
 
 <%= form_tag(show_path, method: "post", id: 'buildings', remote: true) do %>
-<div id="maps" style="width:800px;height:600px"></div>
+<div id="maps"></div>
 
 <%= label_tag :latitude %>
 <%= text_field_tag :latitude, params[:latitude] %>
@@ -22,14 +22,6 @@
 
 <% end %>
 <%= yield %>
-
-<%= debug(params) if Rails.env.development? %>
-
-<script type="text/javascript">function submitOnClick(formName){
-        document.forms[formName].submit();
-    }
-
-</script>
 
 </body>
 </html>
