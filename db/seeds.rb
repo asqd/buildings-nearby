@@ -256,11 +256,6 @@ building_list = [
   {
     latitude: 55.66156210289961,
     longitude: 37.69588984030452
-  },
-
-  {
-    latitude: 55.66260301984588,
-    longitude: 37.71271265524592
   }
 ]
 
