@@ -33,6 +33,7 @@ function initialize() {
             });
         }
         console.log(marker.position);
+
         document.getElementById('latitude').value = location.lat();
         document.getElementById('longitude').value = location.lng();
     }

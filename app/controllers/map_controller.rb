@@ -11,9 +11,8 @@ class MapController < ApplicationController
 
     @buildings = point.nearbys(4)
     
-    distanses = compute_distanse(@buildings, point)
-
-    @buildings = distanses.sort_by { |k, v| k }
+    #distances
+    @buildings = compute_distance(@buildings, point)
 
     respond_to do |format|
       format.html { redirect_to root_url }
@@ -23,15 +22,15 @@ class MapController < ApplicationController
 
   private
 
-  def compute_distanse(buildings, point)
-    distanses = {}
+  def compute_distance(buildings, point)
+    distances = {}
 
     buildings.each do |building|
       d = building.distance_to(point)
-      distanses[d] = building
+      distances[d] = building
     end
 
-    distanses
+    distances
   end
 
 end
